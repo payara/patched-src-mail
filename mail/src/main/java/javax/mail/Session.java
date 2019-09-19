@@ -1057,7 +1057,7 @@ public final class Session {
 	loadAllResources("META-INF/javamail.providers", cl, loader);
 
 	// load default META-INF/javamail.default.providers from mail.jar file
-	loadResource("/META-INF/javamail.default.providers", cl, loader, false);
+	loadResource("/META-INF/javamail.default.providers", getClass(), loader, true);
 
 	/*
 	 * If we haven't loaded any providers and the fallback configuration
@@ -1182,7 +1182,7 @@ public final class Session {
 	};
 
 	// load default META-INF/javamail.default.address.map from mail.jar
-	loadResource("/META-INF/javamail.default.address.map", cl, loader, true);
+	loadResource("/META-INF/javamail.default.address.map", getClass(), loader, true);
 
 	// load the META-INF/javamail.address.map file supplied by an app
 	loadAllResources("META-INF/javamail.address.map", cl, loader);
